@@ -9,6 +9,7 @@ import Medication from './pages/Medication'
 import Mood from './pages/Mood'
 import Schedule from './pages/Schedule'
 import Settings from './pages/Settings'
+import Menstrual from './pages/Menstrual'
 import './App.css'
 
 export default function App() {
@@ -25,6 +26,7 @@ export default function App() {
           <Route path="/mood" element={<Mood />} />
           <Route path="/schedule" element={<Schedule />} />
           <Route path="/settings" element={<Settings />} />
+          <Route path="/menstrual" element={<Menstrual />} />
         </Routes>
       </div>
       <Nav />

@@ -27,6 +27,7 @@ export function getDayLog(date) {
       meds: [],
       mood: null,
       moodNote: '',
+      hygiene: { shower: false, teeth: false },
     }
   } catch {
     return {}
@@ -79,4 +80,29 @@ export function getMoodLogs() {
   } catch {
     return []
   }
+}
+
+export function getPeriodLogs() {
+  try {
+    return JSON.parse(localStorage.getItem('omamori_periods') || '[]')
+  } catch {
+    return []
+  }
+}
+
+export function savePeriodEntry(entry) {
+  const logs = getPeriodLogs()
+  const idx = logs.findIndex((l) => l.id === entry.id)
+  if (idx >= 0) {
+    logs[idx] = entry
+  } else {
+    logs.push(entry)
+  }
+  logs.sort((a, b) => a.start.localeCompare(b.start))
+  localStorage.setItem('omamori_periods', JSON.stringify(logs))
+}
+
+export function deletePeriodEntry(id) {
+  const logs = getPeriodLogs().filter((l) => l.id !== id)
+  localStorage.setItem('omamori_periods', JSON.stringify(logs))
 }

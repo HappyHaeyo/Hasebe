@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { getTodayLog, getSettings } from '../lib/storage'
+import { getTodayLog, saveTodayLog, getSettings } from '../lib/storage'
 import './Home.css'
 
 const MOOD_EMOJI = ['', '😞', '😕', '😐', '🙂', '😊']
@@ -14,6 +14,13 @@ export default function Home() {
     setSettings(getSettings())
   }, [])
 
+  function toggleHygiene(key) {
+    const hygiene = { ...(log.hygiene || {}), [key]: !log.hygiene?.[key] }
+    const next = { ...log, hygiene }
+    setLog(next)
+    saveTodayLog({ hygiene })
+  }
+
   if (!log) return null
 
   const charName = settings.characterName || '하세베'
@@ -23,9 +30,15 @@ export default function Home() {
 
   const warnings = []
   if (log.sleep?.hours != null && log.sleep.hours < 6) warnings.push('수면 부족')
+  if (log.sleep?.hours != null && log.sleep.hours > 12) warnings.push('수면 과다')
   if (mealsEaten.length < 2) warnings.push('식사 부족')
   if (medsTotal > 0 && medsTaken < medsTotal) warnings.push('약 미복용')
   if ((log.water || 0) < 4) warnings.push('물 부족')
+
+  const HYGIENE_ITEMS = [
+    { key: 'shower', label: '샤워 / 씻기', icon: '🚿' },
+    { key: 'teeth', label: '양치', icon: '🪥' },
+  ]
 
   return (
     <div className="home-page">
@@ -43,6 +56,20 @@ export default function Home() {
           </p>
         </div>
       )}
+
+      <div className="hygiene-bar">
+        {HYGIENE_ITEMS.map((item) => (
+          <button
+            key={item.key}
+            className={`hygiene-btn ${log.hygiene?.[item.key] ? 'done' : ''}`}
+            onClick={() => toggleHygiene(item.key)}
+          >
+            <span>{item.icon}</span>
+            <span>{item.label}</span>
+            {log.hygiene?.[item.key] && <span className="hygiene-check">✓</span>}
+          </button>
+        ))}
+      </div>
 
       <div className="home-grid">
         <Link to="/diet" className="home-card">
@@ -88,6 +115,13 @@ export default function Home() {
           <div className="card-icon">📋</div>
           <div className="card-label">일정</div>
           <div className="card-value">할 일</div>
+          <div className="card-sub">탭해서 확인</div>
+        </Link>
+
+        <Link to="/menstrual" className="home-card">
+          <div className="card-icon">🩸</div>
+          <div className="card-label">월경</div>
+          <div className="card-value">관리</div>
           <div className="card-sub">탭해서 확인</div>
         </Link>
       </div>
