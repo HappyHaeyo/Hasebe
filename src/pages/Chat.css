@@ -1,9 +1,13 @@
 .chat-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: var(--nav-h);
   display: flex;
   flex-direction: column;
-  height: calc(100dvh - var(--nav-h));
-  margin: -20px -16px;
-  padding-bottom: var(--nav-h);
+  background: var(--bg);
+  z-index: 10;
 }
 
 .chat-messages {
