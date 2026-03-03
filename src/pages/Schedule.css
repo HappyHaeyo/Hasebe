@@ -1,0 +1,108 @@
+.schedule-page {}
+
+.todo-input-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.todo-input-row input {
+  flex: 1;
+}
+
+.todo-input-row button {
+  background: var(--gold);
+  color: #000;
+  font-weight: 600;
+  padding: 0 16px;
+  border-radius: 8px;
+  height: 40px;
+  white-space: nowrap;
+}
+
+.todo-input-row button:disabled {
+  opacity: 0.4;
+}
+
+.todo-filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.todo-filters button {
+  font-size: 0.8rem;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.todo-filters button.active {
+  background: var(--gold);
+  color: #000;
+  border-color: var(--gold);
+}
+
+.todo-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.todo-empty {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 30px 0;
+  font-size: 0.9rem;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.todo-item.done .todo-text {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.todo-check {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  width: 24px;
+  flex-shrink: 0;
+}
+
+.todo-item.done .todo-check {
+  color: var(--success);
+}
+
+.todo-text {
+  flex: 1;
+  font-size: 0.95rem;
+}
+
+.todo-date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.todo-delete {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  padding: 4px 6px;
+  border-radius: 6px;
+}
+
+.todo-delete:hover {
+  color: var(--danger);
+}

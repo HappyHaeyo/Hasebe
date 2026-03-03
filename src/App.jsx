@@ -1,48 +1,33 @@
-import { useState, useEffect } from 'react'
-import Chat from './components/Chat.jsx'
-import Settings from './components/Settings.jsx'
+import { Routes, Route } from 'react-router-dom'
+import Nav from './components/Nav'
+import Home from './pages/Home'
+import Chat from './pages/Chat'
+import Diet from './pages/Diet'
+import Sleep from './pages/Sleep'
+import Exercise from './pages/Exercise'
+import Medication from './pages/Medication'
+import Mood from './pages/Mood'
+import Schedule from './pages/Schedule'
+import Settings from './pages/Settings'
 import './App.css'
 
 export default function App() {
-  const [apiKey, setApiKey] = useState(() => localStorage.getItem('gemini_api_key') || '')
-  const [showSettings, setShowSettings] = useState(false)
-
-  useEffect(() => {
-    if (!apiKey) setShowSettings(true)
-  }, [])
-
-  const handleSaveKey = (key) => {
-    localStorage.setItem('gemini_api_key', key)
-    setApiKey(key)
-    setShowSettings(false)
-  }
-
   return (
-    <div className="app">
-      <header className="app-header">
-        <span className="app-title">Hasebe Chat</span>
-        <button className="settings-btn" onClick={() => setShowSettings(true)} title="설정">
-          ⚙
-        </button>
-      </header>
-
-      <main className="app-main">
-        {apiKey ? (
-          <Chat apiKey={apiKey} />
-        ) : (
-          <div className="no-key-notice">
-            <p>API 키를 설정해 주세요.</p>
-          </div>
-        )}
-      </main>
-
-      {showSettings && (
-        <Settings
-          currentKey={apiKey}
-          onSave={handleSaveKey}
-          onClose={() => apiKey && setShowSettings(false)}
-        />
-      )}
+    <div className="app-layout">
+      <div className="app-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/chat" element={<Chat />} />
+          <Route path="/diet" element={<Diet />} />
+          <Route path="/sleep" element={<Sleep />} />
+          <Route path="/exercise" element={<Exercise />} />
+          <Route path="/medication" element={<Medication />} />
+          <Route path="/mood" element={<Mood />} />
+          <Route path="/schedule" element={<Schedule />} />
+          <Route path="/settings" element={<Settings />} />
+        </Routes>
+      </div>
+      <Nav />
     </div>
   )
 }

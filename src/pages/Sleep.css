@@ -1,0 +1,73 @@
+.sleep-page {}
+
+.sleep-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.time-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.time-block {
+  flex: 1;
+}
+
+.time-block label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.time-block input[type="time"] {
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 10px;
+  color-scheme: dark;
+}
+
+.time-arrow {
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.sleep-result {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: var(--surface2);
+  border-radius: 10px;
+}
+
+.sleep-hours {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.sleep-quality {
+  font-size: 0.9rem;
+}
+
+.sleep-quality.good { color: var(--success); }
+.sleep-quality.ok { color: var(--gold); }
+.sleep-quality.bad { color: var(--danger); }
+
+.sleep-tip {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  padding: 12px 16px;
+  background: var(--surface);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
