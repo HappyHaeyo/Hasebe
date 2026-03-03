@@ -1,0 +1,89 @@
+.settings-page {
+  padding-bottom: 20px;
+}
+
+.settings-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.settings-section label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  display: block;
+}
+
+.med-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.med-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: var(--surface2);
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.med-list em {
+  color: var(--text-muted);
+  font-style: normal;
+}
+
+.remove-btn {
+  font-size: 0.8rem;
+  color: var(--danger);
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--danger);
+}
+
+.add-med-row {
+  display: flex;
+  gap: 8px;
+}
+
+.add-med-row input {
+  flex: 1;
+}
+
+.add-med-row select {
+  width: auto;
+  flex-shrink: 0;
+}
+
+.add-btn {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  padding: 0 14px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+.save-btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--gold);
+  color: #000;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 12px;
+  margin-top: 8px;
+  transition: background 0.2s;
+}
+
+.save-btn.saved {
+  background: var(--success);
+  color: #fff;
+}

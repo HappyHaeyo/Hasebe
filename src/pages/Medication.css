@@ -1,0 +1,70 @@
+.medication-page {}
+
+.med-empty {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 40px 0;
+  line-height: 2;
+}
+
+.med-progress {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.all-done {
+  color: var(--success);
+  margin-left: 8px;
+}
+
+.med-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.med-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.med-item.taken {
+  border-color: var(--success);
+  background: rgba(74, 201, 122, 0.06);
+}
+
+.med-check {
+  font-size: 1.3rem;
+  color: var(--text-muted);
+  width: 28px;
+  text-align: center;
+}
+
+.med-item.taken .med-check {
+  color: var(--success);
+}
+
+.med-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.med-name {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.med-time {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
