@@ -30,6 +30,7 @@
 
 .chat-bubble {
   max-width: 80%;
+  min-width: 0;
 }
 
 .chat-bubble.user {
@@ -54,6 +55,7 @@
   line-height: 1.6;
   font-size: 0.9rem;
   white-space: pre-wrap;
+  overflow-wrap: break-word;
 }
 
 .chat-bubble.user p {
