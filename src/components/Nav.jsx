@@ -10,6 +10,7 @@ const TABS = [
   { to: '/medication', label: '약', icon: '💊' },
   { to: '/mood', label: '기분', icon: '💭' },
   { to: '/schedule', label: '일정', icon: '📋' },
+  { to: '/menstrual', label: '월경', icon: '🩸' },
   { to: '/settings', label: '설정', icon: '⚙️' },
 ]
 

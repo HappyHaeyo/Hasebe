@@ -1,0 +1,181 @@
+.menstrual-page {}
+
+.period-status {
+  margin-bottom: 24px;
+}
+
+.status-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.status-card.active {
+  background: rgba(201, 74, 74, 0.1);
+  border-color: var(--danger);
+}
+
+.status-card.soon {
+  background: rgba(201, 168, 76, 0.1);
+  border-color: var(--gold);
+}
+
+.status-icon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.status-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.status-sub {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.period-form-section,
+.period-history {
+  margin-bottom: 24px;
+}
+
+.period-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-row label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.symptoms-row .symptom-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  border: 1px solid var(--border);
+  background: var(--surface2);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.chip.selected {
+  background: rgba(201, 74, 74, 0.15);
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.chip.small {
+  padding: 3px 8px;
+  font-size: 0.75rem;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-save {
+  background: var(--gold);
+  color: #000;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+}
+
+.btn-save:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-cancel {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.history-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.history-dates {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.history-start {
+  color: var(--gold-light);
+}
+
+.history-arrow,
+.history-duration {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.history-symptoms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.history-notes {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.history-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.history-actions button {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  padding: 2px 0;
+  border-bottom: 1px solid transparent;
+}
+
+.history-actions button:hover {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}

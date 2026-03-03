@@ -29,7 +29,8 @@ export default function Sleep() {
   const hours = log.sleep?.hours
   const quality =
     hours == null ? null
-    : hours >= 8 ? '충분해요 ✓'
+    : hours > 12 ? '너무 많아요 ⚠️'
+    : hours >= 7 ? '충분해요 ✓'
     : hours >= 6 ? '조금 부족해요'
     : '많이 부족해요 ⚠️'
 
@@ -61,7 +62,7 @@ export default function Sleep() {
         {hours != null && (
           <div className="sleep-result">
             <span className="sleep-hours">{hours}시간</span>
-            <span className={`sleep-quality ${hours < 6 ? 'bad' : hours < 8 ? 'ok' : 'good'}`}>
+            <span className={`sleep-quality ${hours > 12 || hours < 6 ? 'bad' : hours < 7 ? 'ok' : 'good'}`}>
               {quality}
             </span>
           </div>
